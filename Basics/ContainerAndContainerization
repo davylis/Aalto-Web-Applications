@@ -1,0 +1,55 @@
+Containerization refers to bundling application code and dependencies into a container image that can be run consistently across environments. One of the most popular containerization tools is Docker
+
+Once you have installed Docker, you can verify the installation by running the command docker run hello-world
+
+Docker is useful for running individual containers, but for multi-container applications, you need an orchestration tool. For Docker, the choice is Docker Compose ↗, which allows defining and running multi-container applications.
+
+Once you have installed Docker Compose, open up a terminal and create a new directory for testing. Inside the directory, create a file called compose.yaml with the following content:
+
+services:
+  hello-world:
+    image: hello-world
+
+The compose.yaml file is a configuration file for Docker Compose. The above configuration defines a service called hello-world that uses the hello-world image from Docker Hub.
+
+Save the file and run the command 
+docker compose up
+in the same folder with the file. This command reads the configuration file and starts the services defined in it. In this case, the service hello-world is started, which downloads the hello-world image from Docker Hub and runs it in a container.
+
+Output:
+docker compose up
+[+] Running 1/0
+ ✔ Container walking-skeleton-hello-world-1
+Attaching to hello-world-1
+hello-world-1  |
+hello-world-1  | Hello from Docker!
+hello-world-1  | This message shows that your installation
+                 appears to be working correctly.
+hello-world-1  |
+hello-world-1  | To generate this message, Docker took the
+                 following steps:
+hello-world-1  |  1. The Docker client contacted the Docker daemon.
+hello-world-1  |  2. The Docker daemon pulled the "hello-world"
+                  image from the Docker Hub. (amd64)
+hello-world-1  |  3. The Docker daemon created a new container
+                  from that image which runs the executable that
+                  produces the output you are currently reading.
+hello-world-1  |  4. The Docker daemon streamed that output to the
+                  Docker client, which sent it to your terminal.
+hello-world-1  |
+hello-world-1  | To try something more ambitious, you can run an
+                 Ubuntu container with:
+hello-world-1  |  $ docker run -it ubuntu bash
+hello-world-1  |
+hello-world-1  | Share images, automate workflows, and more with a
+                 free Docker ID:
+hello-world-1  |  https://hub.docker.com/
+hello-world-1  |
+hello-world-1  | For more examples and ideas, visit:
+hello-world-1  |  https://docs.docker.com/get-started/
+hello-world-1  |
+hello-world-1 exited with code 0
+
+Once you have both Docker and Docker Compose installed, you can start creating multi-container applications. 
+
+
