@@ -1,4 +1,14 @@
 services:
+  client:
+    build: client
+    restart: unless-stopped
+    volumes:
+      - ./client:/app
+    ports:
+      - 5173:5173
+    depends_on:
+      - server
+
   server:
     build: server
     restart: unless-stopped
