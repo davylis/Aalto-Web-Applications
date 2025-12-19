@@ -27,6 +27,9 @@
 
 ## HTTP uses text-based communication
 - Communication over the HTTP-protocol is text-based. This means that the messages are human-readable, and users with access to the network over which the messages are sent can study the messages.
-- 
+
+## HTTP and retrieving a web page with a browser
+- Retrieving a single web page might in reality consist of the browser making hundreds of requests, even though for the user it might seem that only a single address is visited.
+- While interpreting the content, the browser also detects linked resources such as images, style files, and scripts. For each linked resource, the browser automatically makes a new request to the server.
 
 
